@@ -1,12 +1,12 @@
-import React, {PropTypes, Component} from 'react';
-import {Text, TouchableOpacity, StyleSheet} from 'react-native';
+import React, { PropTypes, Component } from 'react';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-function ActionButton({action, text}) {
+function ActionButton({ action, text, color }) {
   return (
     <TouchableOpacity
       onPress={action}
       style={styles.button}>
-      <Text>{text}</Text>
+      <Text style={styles[color]}>{text}</Text>
     </TouchableOpacity>
   )
 }
@@ -14,13 +14,18 @@ function ActionButton({action, text}) {
 ActionButton.propTypes = {
   action: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired
 }
 
 const styles = StyleSheet.create({
   button: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+  },
+  white: {
+    color: 'white',
+    fontSize: 18,
   }
 });
 

@@ -1,38 +1,66 @@
-import React, {PropTypes, Component} from 'react'
-import {View, Text, StyleSheet} from 'react-native';
+import React, { PropTypes, Component } from 'react'
+import { View, Text, StyleSheet, Image } from 'react-native'
 import ActionButton from '../../components/ActionButton'
+import Logo from '../../components/Logo'
 
 class OnboardingView extends Component {
-
-  constructor(props) {
-    super(props)
-  }
 
   static propTypes = {
     exitOnboarding: PropTypes.func.isRequired,
   }
 
+  constructor(props) {
+    super(props)
+  }
+
+  // TODO : refactor styles,
+  // TODO : make container / box / bg_image components
   render() {
     return(
-      <View style={{flex: 1}}>
-        <View style={styles.centered}>
-          <Text>Skoole</Text>
-          <ActionButton
-            action={this.props.exitOnboarding}
-            text='Explore'
+      <Image
+        source={require('../../../images/bg_onboarding.jpg')}
+        style={styles.container}>
+        <View style={styles.center}>
+          <Logo
+            size={'medium'}
+            color={'white'}
           />
+          <View style={styles.box}>
+            <ActionButton
+              action={this.props.exitOnboarding}
+              color={'white'}
+              text='Explore'
+            />
+          </View>
         </View>
-      </View>
+      </Image>
     )
   }
+
 }
 
 const styles = StyleSheet.create({
-  centered: {
+  container: {
     flex: 1,
-    alignSelf: 'center',
+    width: undefined,
+    height: undefined,
+    backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  center: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  box: {
+    width: 100,
+    height: 50,
+  },
+  bg: {
+    flex: 1,
+    resizeMode: 'cover',
   }
 })
 
