@@ -1,4 +1,4 @@
-import React, {PropTypes, Component} from 'react';
+import React, { PropTypes, Component } from 'react'
 import {
   NavigationExperimental,
   View,
@@ -17,12 +17,6 @@ const TAB_BAR_HEIGHT = 50;
 
 class NavigationView extends Component {
 
-  constructor(props) {
-    super(props)
-    this.renderHeader = this.renderHeader.bind(this)
-    this.renderScene = this.renderScene.bind(this)
-  }
-
   static propTypes = {
     onNavigateBack: PropTypes.func.isRequired,
     onNavigateCompleted: PropTypes.func.isRequired,
@@ -38,6 +32,12 @@ class NavigationView extends Component {
     }),
     switchTab: PropTypes.func.isRequired,
     pushRoute: PropTypes.func.isRequired
+  }
+
+  constructor(props) {
+    super(props)
+    this.renderHeader = this.renderHeader.bind(this)
+    this.renderScene = this.renderScene.bind(this)
   }
 
   // NavigationHeader accepts a prop style

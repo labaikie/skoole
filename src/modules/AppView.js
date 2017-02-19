@@ -1,17 +1,17 @@
-import React, {PropTypes, Component} from 'react';
-import {View, StyleSheet, ActivityIndicator} from 'react-native';
-import NavigationViewContainer from './navigation/NavigationViewContainer';
-import OnboardingViewContainer from './onboarding/OnboardingViewContainer';
-import * as snapshotUtil from '../utils/snapshot';
-import * as SessionStateActions from '../modules/session/SessionState';
-import store from '../redux/store';
-import DeveloperMenu from '../components/DeveloperMenu';
+import React, {PropTypes, Component} from 'react'
+import {View, StyleSheet, ActivityIndicator} from 'react-native'
+import NavigationViewContainer from './navigation/NavigationViewContainer'
+import OnboardingViewContainer from './onboarding/OnboardingViewContainer'
+import * as snapshotUtil from '../utils/snapshot'
+import * as SessionStateActions from '../modules/session/SessionState'
+import store from '../redux/store'
+import DeveloperMenu from '../components/DeveloperMenu'
 
 class AppView extends Component {
 
   static propTypes = {
     isReady: PropTypes.bool.isRequired,
-    dispatch: PropTypes.func.isRequired
+    dispatch: PropTypes.func.isRequired,
   }
 
   componentDidMount() {

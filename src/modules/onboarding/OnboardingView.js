@@ -58,10 +58,6 @@ const styles = StyleSheet.create({
     width: 100,
     height: 50,
   },
-  bg: {
-    flex: 1,
-    resizeMode: 'cover',
-  }
 })
 
 export default OnboardingView

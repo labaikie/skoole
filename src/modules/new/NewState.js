@@ -1,4 +1,4 @@
-import {Map, fromJS} from 'immutable';
+import { fromJS } from 'immutable';
 
 // Initial state
 const initialState = fromJS({

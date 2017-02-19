@@ -9,12 +9,12 @@ const PUSH_ROUTE = 'NavigationState/PUSH_ROUTE';
 const POP_ROUTE = 'NavigationState/POP_ROUTE';
 const SWITCH_TAB = 'NavigationState/SWITCH_TAB';
 
+// Action creators
 export const switchTab = (index) => ({
   type: SWITCH_TAB,
   payload: index
 })
 
-// Action creators
 export const pushRoute = (route) => ({
   type: PUSH_ROUTE,
   payload: route
@@ -36,7 +36,7 @@ const initialState = fromJS({
   // Scenes for the `ExploreTab` tab.
   ExploreTab: {
     index: 0,
-    routes: [{key: 'Counter', title: 'Counter Screen'}]
+    routes: [{key: 'Explore', title: 'Explore'}]
   },
   // Scenes for the `ProfileTab` tab.
   ProfileTab: {

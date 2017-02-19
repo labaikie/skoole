@@ -1,18 +1,18 @@
 /*eslint-disable react/prop-types*/
+import React from 'react'
+import CounterViewContainer from './counter/CounterViewContainer'
+import ColorViewContainer from './colors/ColorViewContainer'
+import NewViewContainer from './new/NewViewContainer'
+import ExploreViewContainer from './explore/ExploreViewContainer'
 
-import React from 'react';
-import CounterViewContainer from './counter/CounterViewContainer';
-import ColorViewContainer from './colors/ColorViewContainer';
-import NewViewContainer from './new/NewViewContainer';
-
-/**
- * AppRouter is responsible for mapping a navigator scene to a view
- */
+/*
+AppRouter is responsible for mapping a navigator scene to a view
+*/
 export default function AppRouter(props) {
   const {key} = props.scene.route;
 
-  if (key === 'Counter') {
-    return <CounterViewContainer />;
+  if (key === 'Explore') {
+    return <ExploreViewContainer />;
   } else if (key === 'New') {
     return <NewViewContainer />;
   }
