@@ -1,9 +1,10 @@
-import {Map, fromJS} from 'immutable';
-import {loop, combineReducers} from 'redux-loop';
-import NavigationStateReducer from '../modules/navigation/NavigationState';
-import CounterStateReducer from '../modules/counter/CounterState';
-import SessionStateReducer, {RESET_STATE} from '../modules/session/SessionState';
+import {Map, fromJS} from 'immutable'
+import {loop, combineReducers} from 'redux-loop'
+import NavigationStateReducer from '../modules/navigation/NavigationState'
+import CounterStateReducer from '../modules/counter/CounterState'
+import SessionStateReducer, {RESET_STATE} from '../modules/session/SessionState'
 import NewStateReducer from '../modules/new/NewState'
+import ExploreStateReducer from '../modules/explore/ExploreState'
 
 const reducers = {
   // Counter sample app state. This can be removed in a live application
@@ -16,6 +17,8 @@ const reducers = {
   session: SessionStateReducer,
 
   greeting: NewStateReducer,
+
+  explore: ExploreStateReducer,
 
 };
 

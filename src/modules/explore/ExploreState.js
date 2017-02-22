@@ -5,7 +5,7 @@ import { get } from '../../utils/api'
 /* Actions */
 const ADD_FILTER = 'Explore/ADD_FILTER'
 const REMOVE_FILTER = 'Explore/REMOVE_FILTER'
-const STUDENTS_REQUEST = 'Explore/STUDENTS_REQUEST'
+const GET_STUDENTS = 'Explore/GET_STUDENTS'
 const STUDENTS_RESPONSE = 'Explore/STUDENTS_RESPONSE'
 
 /* Action Creators */
@@ -19,10 +19,10 @@ export function setFilter(filter) {
   }
 }
 
-export const request = () => ({type: STUDENTS_REQUEST})
+export const request = () => ({type: GET_STUDENTS})
 
 export async function getStudents() {
-  const endpoint = `/students?index=${index}`
+  // const endpoint = `/students?index=${index}`
   // TODO: switch to endpoint later
   return {
     type: STUDENTS_RESPONSE,
@@ -42,7 +42,6 @@ const initialState = fromJS({
 
 /*  Reducer */
 export default function ExploreReducer(state = initialState, action) {
-  const students = state.get('students')
 
   switch (action.type) {
     case ADD_FILTER:
@@ -54,16 +53,16 @@ export default function ExploreReducer(state = initialState, action) {
     case GET_STUDENTS:
       return loop(
         // increment index for subsequent calls
-        students.update('index', index => index + 1)
+        state.updateIn(['students', 'index'], index => index + 1),
         // dispatch getStudents
         Effects.promise(getStudents)
       )
 
     case STUDENTS_RESPONSE:
-      return students
-        .update('count', count => count + action.payload.length)
-        .get('list')
-        .merge(List(action.payload))
+      const data = action.payload.data.gides
+      return state
+        .updateIn(['students', 'count'], count => count + data.length)
+        .mergeDeepIn(['students', 'list'], data)
 
     default:
       return state
