@@ -1,8 +1,8 @@
-import {Map} from 'immutable';
-
-export const RESET_STATE = 'SessionState/RESET';
-export const INITIALIZE_STATE = 'SessionState/INITIALIZE';
-export const EXIT_ONBOARDING = 'SessionState/EXIT_ONBORDING';
+import { Map } from 'immutable'
+// TODO: figure out where to hold API fetching info
+export const RESET_STATE = 'SessionState/RESET'
+export const INITIALIZE_STATE = 'SessionState/INITIALIZE'
+export const EXIT_ONBOARDING = 'SessionState/EXIT_ONBORDING'
 
 // Initial state
 const initialState = Map({
