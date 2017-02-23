@@ -1,23 +1,37 @@
 import React, { PropTypes, Component } from 'react'
-import { View, Text } from 'react-native'
-
-
+import { Container, Content } from 'native-base'
+import UserCard from '../../components/UserCard'
 
 class ExploreView extends Component {
 
-
+  static propTypes = {
+    request: PropTypes.func.isRequired,
+    students: PropTypes.array.isRequired,
+    filters: PropTypes.array.isRequired,
+  }
 
   constructor(props) {
     super(props)
   }
 
   componentDidMount() {
-    this.props.request()
+    const { students, request } = this.props
+    if(!students.length) request()
+  }
+
+  _renderCards() {
+    return this.props.students.map(i => {
+      return <UserCard key={i._id} user={i} />
+    })
   }
 
   render() {
     return (
-      <View><Text>Explore</Text></View>
+      <Container>
+        <Content>
+          {this._renderCards()}
+        </Content>
+      </Container>
     )
   }
 

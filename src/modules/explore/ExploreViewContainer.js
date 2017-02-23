@@ -4,7 +4,8 @@ import { request } from './ExploreState'
 
 export default connect(
   state => ({
-    students: state.getIn(['explore', 'students', 'list'])
+    students: state.getIn(['explore', 'students', 'list']).toJS(),
+    filters: state.getIn(['explore', 'filters']).toArray()
   }),
   { request }
 )(ExploreView);

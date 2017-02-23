@@ -1,17 +1,13 @@
-import {Map, fromJS} from 'immutable'
-import {loop, combineReducers} from 'redux-loop'
+import { Map, fromJS } from 'immutable'
+import { loop, combineReducers } from 'redux-loop'
 import NavigationStateReducer from '../modules/navigation/NavigationState'
 import CounterStateReducer from '../modules/counter/CounterState'
-import SessionStateReducer, {RESET_STATE} from '../modules/session/SessionState'
+import SessionStateReducer, { RESET_STATE } from '../modules/session/SessionState'
 import NewStateReducer from '../modules/new/NewState'
 import ExploreStateReducer from '../modules/explore/ExploreState'
 
 const reducers = {
-  // Counter sample app state. This can be removed in a live application
-  counter: CounterStateReducer,
 
-  // @NOTE: By convention, the navigation state must live in a subtree called
-  //`navigationState`
   navigationState: NavigationStateReducer,
 
   session: SessionStateReducer,
@@ -20,7 +16,7 @@ const reducers = {
 
   explore: ExploreStateReducer,
 
-};
+}
 
 // initial state, accessor and mutator for supporting root-level
 // immutable data with redux-loop reducer combinator
