@@ -11,7 +11,7 @@ AppRouter is responsible for mapping a navigator scene to a view
 export default function AppRouter(props) {
   const {key} = props.scene.route;
 
-  if (key === 'Explore') {
+  if (key === 'Browse') {
     return <StudentsViewContainer />;
   } else if (key === 'New') {
     return <NewViewContainer />;

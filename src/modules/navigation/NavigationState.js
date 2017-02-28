@@ -29,14 +29,14 @@ const initialState = fromJS({
   tabs: {
     index: 0,
     routes: [
-      {key: 'ExploreTab', title: 'EXPLORE'},
+      {key: 'BrowseTab', title: 'BROWSE'},
       {key: 'ProfileTab', title: 'PROFILE'},
     ]
   },
-  // Scenes for the `ExploreTab` tab.
-  ExploreTab: {
+  // Scenes for the `BrowseTab` tab.
+  BrowseTab: {
     index: 0,
-    routes: [{key: 'Explore', title: 'Explore'}]
+    routes: [{key: 'Browse', title: 'Browse Students'}]
   },
   // Scenes for the `ProfileTab` tab.
   ProfileTab: {

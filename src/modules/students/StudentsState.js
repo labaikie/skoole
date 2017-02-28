@@ -13,7 +13,6 @@ export function setFilter(filter) {
   return (dispatch, getState) => {
     // check if the filter exists
     const state = getState()
-    console.log('state', state)
     // TODO: depending on existence, dispatch ADD or REMOVE
     dispatch({type: ADD_FILTER, filter})
   }
