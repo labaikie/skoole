@@ -3,7 +3,7 @@ import React from 'react'
 import CounterViewContainer from './counter/CounterViewContainer'
 import ColorViewContainer from './colors/ColorViewContainer'
 import NewViewContainer from './new/NewViewContainer'
-import ExploreViewContainer from './explore/ExploreViewContainer'
+import StudentsViewContainer from './students/StudentsViewContainer'
 
 /*
 AppRouter is responsible for mapping a navigator scene to a view
@@ -12,7 +12,7 @@ export default function AppRouter(props) {
   const {key} = props.scene.route;
 
   if (key === 'Explore') {
-    return <ExploreViewContainer />;
+    return <StudentsViewContainer />;
   } else if (key === 'New') {
     return <NewViewContainer />;
   }

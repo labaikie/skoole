@@ -4,7 +4,7 @@ import NavigationStateReducer from '../modules/navigation/NavigationState'
 import CounterStateReducer from '../modules/counter/CounterState'
 import SessionStateReducer, { RESET_STATE } from '../modules/session/SessionState'
 import NewStateReducer from '../modules/new/NewState'
-import ExploreStateReducer from '../modules/explore/ExploreState'
+import StudentsStateReducer from '../modules/students/StudentsState'
 
 const reducers = {
 
@@ -14,7 +14,7 @@ const reducers = {
 
   greeting: NewStateReducer,
 
-  explore: ExploreStateReducer,
+  students: StudentsStateReducer,
 
 }
 

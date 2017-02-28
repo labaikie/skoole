@@ -32,12 +32,13 @@ export async function getStudents() {
 
 /*  Initial State */
 const initialState = fromJS({
-  filters: List(),
-  students: {
+  config: {
+    filters: List(),
     count: 0,
-    list: List(),
-    index: 0,
-  }
+    index: 0
+  },
+  list: List(),
+  current: null,
 })
 
 /*  Reducer */
@@ -53,7 +54,7 @@ export default function ExploreReducer(state = initialState, action) {
     case GET_STUDENTS:
       return loop(
         // increment index for subsequent calls
-        state.updateIn(['students', 'index'], index => index + 1),
+        state.updateIn(['config', 'index'], index => index + 1),
         // dispatch getStudents
         Effects.promise(getStudents)
       )
@@ -61,8 +62,8 @@ export default function ExploreReducer(state = initialState, action) {
     case STUDENTS_RESPONSE:
       const data = action.payload.data.gides
       return state
-        .updateIn(['students', 'count'], count => count + data.length)
-        .mergeDeepIn(['students', 'list'], data)
+        .updateIn(['config', 'count'], count => count + data.length)
+        .mergeIn(['list'], data)
 
     default:
       return state

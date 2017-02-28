@@ -1,30 +1,28 @@
 import React, { PropTypes } from 'react'
-import { Image } from 'react-native'
+import { Image, StyleSheet } from 'react-native'
 import { Card, CardItem, Left, Right, Thumbnail, Body, Text, Button, Icon } from 'native-base'
 
-function UserCard({ user }) {
+function UserCard({ user, onPress }) {
   return (
     <Card>
 
       <CardItem>
         <Left>
-          <Thumbnail source={require('../../images/pepperoni.png')} />
+          <Thumbnail source={require('../../images/school_seal.png')} />
           <Body>
-            <Text>Student Name</Text>
+            <Text>Sue Parker</Text>
             <Text note>Pepperdine Univeristy</Text>
           </Body>
         </Left>
       </CardItem>
 
-      <CardItem cardBody>
-
-      </CardItem>
+      <Image
+        source={require('../../images/student.jpg')}
+        style={styles.container}>
+        <Text>category, category, category</Text>
+      </Image>
 
       <CardItem content>
-        <Text>categories, categories, categories</Text>
-      </CardItem>
-
-      <CardItem>
         <Left>
           <Button transparent>
             <Icon active name="thumbs-up" />
@@ -50,7 +48,16 @@ UserCard.propTypes = {
   user: PropTypes.object.isRequired
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: undefined,
+    height: 200,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+});
+
 export default UserCard
 
-        // <Left>
-        // </Left>

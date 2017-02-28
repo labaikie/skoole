@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { Container, Content } from 'native-base'
 import UserCard from '../../components/UserCard'
 
-class ExploreView extends Component {
+class StudentsView extends Component {
 
   static propTypes = {
     request: PropTypes.func.isRequired,
@@ -38,4 +38,4 @@ class ExploreView extends Component {
 }
 
 
-export default ExploreView
+export default StudentsView
