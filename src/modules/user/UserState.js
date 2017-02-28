@@ -1,7 +1,10 @@
-import { fromJS } from 'immutable';
+import { Map, fromJS, List } from 'immutable';
 
 // Initial state
 const initialState = fromJS({
+  token: '',
+  profile: Map({}),
+  sessions: List(),
   greeting: 'hello',
   cards: [{value: 0}],
 });
@@ -15,7 +18,7 @@ export const change = () => ({
 })
 
 // Reducer
-export default function NewStateReducer(state = initialState, action = {}) {
+export default function UserStateReducer(state = initialState, action = {}) {
   switch (action.type) {
     case CHANGE:
       const greeting = state.get('greeting')

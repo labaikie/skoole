@@ -29,7 +29,7 @@ class OnboardingView extends Component {
             <ActionButton
               action={this.props.exitOnboarding}
               color={'white'}
-              text='Explore'
+              text='Browse Snoop'
             />
           </View>
         </View>

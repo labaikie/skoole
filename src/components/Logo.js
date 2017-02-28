@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 function Logo({ size, color }) {
   return (
     <View style={styles[size]}>
-      <Text style={styles[color]}>Skoole</Text>
+      <Text style={styles[color]}>Snoop</Text>
     </View>
   )
 }

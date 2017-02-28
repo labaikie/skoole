@@ -2,7 +2,7 @@
 import React from 'react'
 import CounterViewContainer from './counter/CounterViewContainer'
 import ColorViewContainer from './colors/ColorViewContainer'
-import NewViewContainer from './new/NewViewContainer'
+import ScheduleViewContainer from './schedule/ScheduleViewContainer'
 import StudentsViewContainer from './students/StudentsViewContainer'
 
 /*
@@ -13,8 +13,8 @@ export default function AppRouter(props) {
 
   if (key === 'Browse') {
     return <StudentsViewContainer />;
-  } else if (key === 'New') {
-    return <NewViewContainer />;
+  } else if (key === 'Schedule') {
+    return <ScheduleViewContainer />;
   }
 
   if (key.indexOf('Color') === 0) {

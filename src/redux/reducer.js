@@ -3,7 +3,7 @@ import { loop, combineReducers } from 'redux-loop'
 import NavigationStateReducer from '../modules/navigation/NavigationState'
 import CounterStateReducer from '../modules/counter/CounterState'
 import SessionStateReducer, { RESET_STATE } from '../modules/session/SessionState'
-import NewStateReducer from '../modules/new/NewState'
+import UserStateReducer from '../modules/user/UserState'
 import StudentsStateReducer from '../modules/students/StudentsState'
 
 const reducers = {
@@ -12,7 +12,7 @@ const reducers = {
 
   session: SessionStateReducer,
 
-  greeting: NewStateReducer,
+  user: UserStateReducer,
 
   students: StudentsStateReducer,
 

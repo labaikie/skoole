@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import { Container, Content } from 'native-base'
-import UserCard from '../../components/UserCard'
+import StudentCard from '../../components/StudentCard'
 
 class StudentsView extends Component {
 
@@ -21,7 +21,7 @@ class StudentsView extends Component {
 
   _renderCards() {
     return this.props.students.map(i => {
-      return <UserCard key={i._id} user={i} />
+      return <StudentCard key={i._id} user={i} />
     })
   }
 

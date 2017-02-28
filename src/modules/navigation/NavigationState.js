@@ -29,8 +29,9 @@ const initialState = fromJS({
   tabs: {
     index: 0,
     routes: [
-      {key: 'BrowseTab', title: 'BROWSE'},
-      {key: 'ProfileTab', title: 'PROFILE'},
+      {key: 'BrowseTab', title: 'Snoop'},
+      {key: 'ScheduleTab', title: 'Snoops'},
+      {key: 'ProfileTab', title: 'Profile'},
     ]
   },
   // Scenes for the `BrowseTab` tab.
@@ -43,9 +44,9 @@ const initialState = fromJS({
     index: 0,
     routes: [{key: 'Color', title: 'Color Screen'}]
   },
-  NewTab: {
+  ScheduleTab: {
     index: 0,
-    routes: [{key: 'New', title: 'New Screen'}]
+    routes: [{key: 'Schedule', title: 'Snoops'}]
   },
 });
 
