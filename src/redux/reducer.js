@@ -4,6 +4,7 @@ import NavigationStateReducer from '../modules/navigation/NavigationState'
 import SessionStateReducer, { RESET_STATE } from '../modules/session/SessionState'
 import UserStateReducer from '../modules/user/UserState'
 import StudentsStateReducer from '../modules/students/StudentsState'
+import ColorStateReducer from '../modules/colors/ColorState'
 
 const reducers = {
 
@@ -14,6 +15,8 @@ const reducers = {
   user: UserStateReducer,
 
   students: StudentsStateReducer,
+
+  color: ColorStateReducer,
 
 }
 
