@@ -4,6 +4,7 @@ import NavigationStateReducer from '../modules/navigation/NavigationState'
 import SessionStateReducer, { RESET_STATE } from '../modules/session/SessionState'
 import UserStateReducer from '../modules/user/UserState'
 import StudentsStateReducer from '../modules/students/StudentsState'
+import ChatStateReducer from '../modules/chat/ChatState'
 
 const reducers = {
 
@@ -14,6 +15,8 @@ const reducers = {
   user: UserStateReducer,
 
   students: StudentsStateReducer,
+
+  chat: ChatStateReducer,
 
 }
 
