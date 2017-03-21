@@ -1,24 +1,26 @@
-// import * as NewState from './NewState';
-import * as NavigationState from '../../modules/navigation/NavigationState'
+import * as NavigationState from '../navigation/NavigationState'
 import React, { Component, PropTypes } from 'react'
 import { Container, Content, Left, Body, Right, ListItem, Thumbnail, Text } from 'native-base'
 import { TouchableOpacity } from 'react-native'
 
-class ScheduleView extends Component {
+export default class ScheduleView extends Component {
 
   static propTypes = {
-    // greeting: PropTypes.string.isRequired,
     dispatch: PropTypes.func.isRequired,
   }
 
   constructor(props) {
     super(props)
-    // this.change = this.change.bind(this)
+    this.initiateChat = this.initiateChat.bind(this)
   }
 
-  // change() {
-  //   this.props.dispatch(NewState.change());
-  // }
+  initiateChat() {
+    this.props.dispatch(NavigationState.pushRoute({
+      key: 'Snoop',
+      title: 'Snoop',
+    }))
+  }
+
   // TODO : chunk out an item and lists into custom 'List' components
   // TODO : create component for each custom 'ListItem' components
   render() {
@@ -37,7 +39,10 @@ class ScheduleView extends Component {
 
             <Body>
               <Text>Sue Parker</Text>
-              <Text note>Click to snoop with Sue</Text>
+              <Text note
+                onPress={this.initiateChat}>
+                Click to snoop with Sue
+              </Text>
             </Body>
 
             <Right>
@@ -66,5 +71,3 @@ class ScheduleView extends Component {
     )
   }
 }
-
-export default ScheduleView
